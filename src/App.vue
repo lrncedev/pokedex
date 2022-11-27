@@ -1,25 +1,25 @@
 <template>
   <NavComponent />
+  <HeroView />
   <router-view />
 </template>
 
 <script>
 import NavComponent from "./components/NavComponent.vue";
-
+import HeroView from "@/views/HeroView.vue";
 export default {
   name: "App",
   components: {
     NavComponent,
+    HeroView,
   },
 };
 </script>
 
 <style lang="scss">
-// #app {
-//   font-family: Avenir, Helvetica, Arial, sans-serif;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-//   text-align: center;
-//   color: #2c3e50;
-// }
+@media screen and (max-width: 41em) {
+  .nav-comp {
+    display: none;
+  }
+}
 </style>

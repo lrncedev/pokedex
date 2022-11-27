@@ -1,14 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100;400;500;700;900&display=swap');
+
 *,
 *::before,
 *::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: red;
 }
 
-/* Variables */
 
+:root {
+  font-family: 'Alexandria', sans-serif;
+}
+/* Variables */
 $main-bg: #2B3151;
 $accent-bg: #3F4367;
 
@@ -17,9 +21,16 @@ $gray-text: #D4D4D4;
 $white-text: #FFFFFF;
 $black-text: #000000;
 
-$md: 1.5em 1.5em;
+$md: 1em;
 
 body {
   background-color: $main-bg;
+
+  .welcome {
+    color: $gray-text;
+  }
+  .pokedex-title {
+    color: $accent-text;
+  }
 }
 
