@@ -1,16 +1,17 @@
 import { createWebHistory, createRouter } from "vue-router";
 
 /* Views directory */
-// import Home from "@/views/HomePage.vue";
-// import Project from "@/views/ProjectsView.vue";
-// import Achievements from "@/views/AchievementsView.vue";
-// import Contact from "@/views/ContactList.vue";
-
+import HeroView from "@/views/HeroView.vue";
+import PokeDex from "@/views/PokeDex.vue";
 const routes = [
-  // {
-  //   path: "/",
-  //   component: Home,
-  // },
+  {
+    path: "/",
+    component: HeroView,
+  },
+  {
+    path: "/pokedex",
+    component: PokeDex,
+  },
   // {
   //   path: "/projects",
   //   component: Project,

@@ -1,17 +1,17 @@
 <template>
   <NavComponent />
-  <HeroView />
+  <!-- <HeroView /> -->
   <router-view />
 </template>
 
 <script>
 import NavComponent from "./components/NavComponent.vue";
-import HeroView from "@/views/HeroView.vue";
+// import HeroView from "@/views/HeroView.vue";
 export default {
   name: "App",
   components: {
     NavComponent,
-    HeroView,
+    // HeroView,
   },
 };
 </script>
