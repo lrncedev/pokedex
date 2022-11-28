@@ -14,7 +14,7 @@
         </p>
       </div>
       <div class="cta-hidden">
-        <button>Let's Go</button>
+        <button @click="gotoPokeDex">Let's Go</button>
       </div>
     </div>
     <img src="@/assets/pokeart.png" alt="" />
@@ -25,6 +25,11 @@
 <script>
 export default {
   name: "HeroView",
+  methods: {
+    gotoPokeDex() {
+      this.$router.push("/pokedex");
+    },
+  },
 };
 </script>
 <style lang="scss">
