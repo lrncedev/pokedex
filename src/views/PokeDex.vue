@@ -8,21 +8,21 @@
           <ul>
             <li>
               <input type="checkbox" name="test" id="test" />
-              <label for="test">Electrict</label>
+              <label for="test">Electric</label>
             </li>
             <li>
               <input type="checkbox" name="test" id="test" />
-              <label for="test">Electrict</label>
+              <label for="test">Electric</label>
             </li>
           </ul>
           <ul>
             <li>
               <input type="checkbox" name="test" id="test" />
-              <label for="test">Electrict</label>
+              <label for="test">Electric</label>
             </li>
             <li>
               <input type="checkbox" name="test" id="test" />
-              <label for="test">Electrict</label>
+              <label for="test">Electric</label>
             </li>
           </ul>
         </div>
@@ -38,31 +38,269 @@
         <h3>Result: <span>8</span> of <span>100</span></h3>
       </div>
       <div class="grid-results">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>7</div>
-        <div>8</div>
+        <div class="pokemon">
+          <div class="pokemon-img">
+            <div class="poke-img">
+              <img src="@/assets/pokemon-1.png" alt="pokemon" />
+            </div>
+            <div class="pokemon-info">
+              <h2 class="pokemon-name">Pokemon Name</h2>
+              <ul class="pokemon-types">
+                <li>Electric</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pokemon-stats">
+            <div class="physical-stats">
+              <div class="height">
+                <h3>Height</h3>
+                <h4>4 feet</h4>
+              </div>
+              <div class="weight">
+                <h3>Weight</h3>
+                <h4>4 feet</h4>
+              </div>
+            </div>
+            <div class="game-stats">
+              <div class="hp">
+                <h3>HP</h3>
+                <h4>35</h4>
+              </div>
+              <div class="attack">
+                <h3>Attack</h3>
+                <h4>Attack</h4>
+              </div>
+              <div class="defense">
+                <h3>Defense</h3>
+                <h4>40</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pokemon">
+          <div class="pokemon-img">
+            <div class="poke-img">
+              <img src="@/assets/pokemon-1.png" alt="pokemon" />
+            </div>
+            <div class="pokemon-info">
+              <h2 class="pokemon-name">Pokemon Name</h2>
+              <ul class="pokemon-types">
+                <li>Electric</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pokemon-stats">
+            <div class="physical-stats">
+              <div class="height">
+                <h3>Height</h3>
+                <h4>4 feet</h4>
+              </div>
+              <div class="weight">
+                <h3>Weight</h3>
+                <h4>4 feet</h4>
+              </div>
+            </div>
+            <div class="game-stats">
+              <div class="hp">
+                <h3>HP</h3>
+                <h4>35</h4>
+              </div>
+              <div class="attack">
+                <h3>Attack</h3>
+                <h4>Attack</h4>
+              </div>
+              <div class="defense">
+                <h3>Defense</h3>
+                <h4>40</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pokemon">
+          <div class="pokemon-img">
+            <div class="poke-img">
+              <img src="@/assets/pokemon-1.png" alt="pokemon" />
+            </div>
+            <div class="pokemon-info">
+              <h2 class="pokemon-name">Pokemon Name</h2>
+              <ul class="pokemon-types">
+                <li>Electric</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pokemon-stats">
+            <div class="physical-stats">
+              <div class="height">
+                <h3>Height</h3>
+                <h4>4 feet</h4>
+              </div>
+              <div class="weight">
+                <h3>Weight</h3>
+                <h4>4 feet</h4>
+              </div>
+            </div>
+            <div class="game-stats">
+              <div class="hp">
+                <h3>HP</h3>
+                <h4>35</h4>
+              </div>
+              <div class="attack">
+                <h3>Attack</h3>
+                <h4>Attack</h4>
+              </div>
+              <div class="defense">
+                <h3>Defense</h3>
+                <h4>40</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pokemon">
+          <div class="pokemon-img">
+            <div class="poke-img">
+              <img src="@/assets/pokemon-1.png" alt="pokemon" />
+            </div>
+            <div class="pokemon-info">
+              <h2 class="pokemon-name">Pokemon Name</h2>
+              <ul class="pokemon-types">
+                <li>Electric</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pokemon-stats">
+            <div class="physical-stats">
+              <div class="height">
+                <h3>Height</h3>
+                <h4>4 feet</h4>
+              </div>
+              <div class="weight">
+                <h3>Weight</h3>
+                <h4>4 feet</h4>
+              </div>
+            </div>
+            <div class="game-stats">
+              <div class="hp">
+                <h3>HP</h3>
+                <h4>35</h4>
+              </div>
+              <div class="attack">
+                <h3>Attack</h3>
+                <h4>Attack</h4>
+              </div>
+              <div class="defense">
+                <h3>Defense</h3>
+                <h4>40</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pokemon">
+          <div class="pokemon-img">
+            <div class="poke-img">
+              <img src="@/assets/pokemon-1.png" alt="pokemon" />
+            </div>
+            <div class="pokemon-info">
+              <h2 class="pokemon-name">Pokemon Name</h2>
+              <ul class="pokemon-types">
+                <li>Electric</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pokemon-stats">
+            <div class="physical-stats">
+              <div class="height">
+                <h3>Height</h3>
+                <h4>4 feet</h4>
+              </div>
+              <div class="weight">
+                <h3>Weight</h3>
+                <h4>4 feet</h4>
+              </div>
+            </div>
+            <div class="game-stats">
+              <div class="hp">
+                <h3>HP</h3>
+                <h4>35</h4>
+              </div>
+              <div class="attack">
+                <h3>Attack</h3>
+                <h4>Attack</h4>
+              </div>
+              <div class="defense">
+                <h3>Defense</h3>
+                <h4>40</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pokemon">
+          <div class="pokemon-img">
+            <div class="poke-img">
+              <img src="@/assets/pokemon-1.png" alt="pokemon" />
+            </div>
+            <div class="pokemon-info">
+              <h2 class="pokemon-name">Pokemon Name</h2>
+              <ul class="pokemon-types">
+                <li>Electric</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pokemon-stats">
+            <div class="physical-stats">
+              <div class="height">
+                <h3>Height</h3>
+                <h4>4 feet</h4>
+              </div>
+              <div class="weight">
+                <h3>Weight</h3>
+                <h4>4 feet</h4>
+              </div>
+            </div>
+            <div class="game-stats">
+              <div class="hp">
+                <h3>HP</h3>
+                <h4>35</h4>
+              </div>
+              <div class="attack">
+                <h3>Attack</h3>
+                <h4>Attack</h4>
+              </div>
+              <div class="defense">
+                <h3>Defense</h3>
+                <h4>40</h4>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+// import axios from "axios";
+
 export default {
   name: "PokeDex",
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    // axiosGet() {
+    //   axios
+    //     .get("https://pokeapi.co/api/v2/pokemon/ditto")
+    //     .then((res) => console.log(res.data.height));
+    // },
+  },
+  mounted() {
+    // this.axiosGet();
+  },
 };
 </script>
 <style lang="scss">
 .grid {
   color: $gray-text;
   display: grid;
+  min-height: 100%;
   grid-template-columns: 1fr;
 
   .grid-item {
@@ -104,32 +342,91 @@ export default {
   .grid-2 {
     display: flex;
     flex-direction: column;
+    gap: 1.5em;
 
     .grid-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      display: none;
     }
     .grid-results {
-      padding: 1em 0;
+      padding: 1em 1em;
       display: grid;
       row-gap: 0.5em;
+      column-gap: 1em;
       grid-template-columns: 1fr 1fr;
-      grid-auto-rows: 200px;
+      grid-auto-rows: auto;
 
-      div {
-        width: 80%;
+      .pokemon {
+        grid-template-columns: 1fr;
+        border-radius: 8px;
         background-color: $accent-bg;
-        margin: 0 auto;
+
+        .pokemon-img {
+          text-align: center;
+          display: grid;
+
+          grid-auto-rows: 150px auto;
+
+          .poke-img {
+            text-align: center;
+            position: relative;
+
+            img {
+              top: -30%;
+              text-align: center;
+              position: absolute;
+              top: -20%;
+              left: 50%;
+              height: 120%;
+              overflow: hidden;
+              transform: translateX(-50%);
+            }
+          }
+          .pokemon-info {
+            .pokemon-name {
+              color: $white-text;
+              font-size: clamp(1.3rem, 2vw, 1.9rem);
+            }
+          }
+        }
+        .pokemon-stats {
+          div {
+            text-align: center;
+
+            h3 {
+              color: $white-text;
+            }
+            h4 {
+              color: $accent-text;
+              font-weight: 400;
+            }
+          }
+          .physical-stats {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+          }
+          .game-stats {
+            padding: $md;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+          }
+        }
       }
     }
   }
 }
 
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 30em) {
   .grid {
     .grid-2 {
       .grid-results {
+        width: 90%;
+        margin: 0 auto;
+        row-gap: 1.3em;
         grid-template-columns: 1fr;
       }
     }
@@ -150,7 +447,7 @@ export default {
   .grid {
     display: grid;
     grid-template-columns: 20% 80%;
-    grid-auto-rows: calc(100vh - (80px + 32px));
+    // grid-auto-rows: calc(100vh - (80px + 32px));
 
     .grid-item {
       padding: 0;
