@@ -272,6 +272,84 @@
             </div>
           </div>
         </div>
+        <div class="pokemon">
+          <div class="pokemon-img">
+            <div class="poke-img">
+              <img src="@/assets/pokemon-1.png" alt="pokemon" />
+            </div>
+            <div class="pokemon-info">
+              <h2 class="pokemon-name">Pokemon Name</h2>
+              <ul class="pokemon-types">
+                <li>Electric</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pokemon-stats">
+            <div class="physical-stats">
+              <div class="height">
+                <h3>Height</h3>
+                <h4>4 feet</h4>
+              </div>
+              <div class="weight">
+                <h3>Weight</h3>
+                <h4>4 feet</h4>
+              </div>
+            </div>
+            <div class="game-stats">
+              <div class="hp">
+                <h3>HP</h3>
+                <h4>35</h4>
+              </div>
+              <div class="attack">
+                <h3>Attack</h3>
+                <h4>Attack</h4>
+              </div>
+              <div class="defense">
+                <h3>Defense</h3>
+                <h4>40</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pokemon">
+          <div class="pokemon-img">
+            <div class="poke-img">
+              <img src="@/assets/pokemon-1.png" alt="pokemon" />
+            </div>
+            <div class="pokemon-info">
+              <h2 class="pokemon-name">Pokemon Name</h2>
+              <ul class="pokemon-types">
+                <li>Electric</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pokemon-stats">
+            <div class="physical-stats">
+              <div class="height">
+                <h3>Height</h3>
+                <h4>4 feet</h4>
+              </div>
+              <div class="weight">
+                <h3>Weight</h3>
+                <h4>4 feet</h4>
+              </div>
+            </div>
+            <div class="game-stats">
+              <div class="hp">
+                <h3>HP</h3>
+                <h4>35</h4>
+              </div>
+              <div class="attack">
+                <h3>Attack</h3>
+                <h4>Attack</h4>
+              </div>
+              <div class="defense">
+                <h3>Defense</h3>
+                <h4>40</h4>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
