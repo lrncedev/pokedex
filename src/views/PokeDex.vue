@@ -38,7 +38,51 @@
         <h3>Result: <span>8</span> of <span>100</span></h3>
       </div>
       <div class="grid-results">
-        <div class="pokemon">
+        <div class="pokemon" v-for="pokemon in pokemonList" :key="pokemon.id">
+          <div class="pokemon-img">
+            <div class="poke-img">
+              <img :src="pokemon.sprites.front_default" :alt="pokemon.name" />
+            </div>
+            <div class="pokemon-info">
+              <h2 class="pokemon-name">{{ pokemon.name }}</h2>
+              <ul class="pokemon-types">
+                <li
+                  v-for="(types, index) in pokemon.types"
+                  :key="pokemon.types[index]"
+                >
+                  {{ types.type.name }}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="pokemon-stats">
+            <div class="physical-stats">
+              <div class="height">
+                <h3>Height</h3>
+                <h4>{{ pokemon.height }}0 cm</h4>
+              </div>
+              <div class="weight">
+                <h3>Weight</h3>
+                <h4>{{ pokemon.weight / 10 }} kg</h4>
+              </div>
+            </div>
+            <div class="game-stats">
+              <div class="hp">
+                <h3>HP</h3>
+                <h4>{{ pokemon.stats[0].base_stat }}</h4>
+              </div>
+              <div class="attack">
+                <h3>Attack</h3>
+                <h4>{{ pokemon.stats[1].base_stat }}</h4>
+              </div>
+              <div class="defense">
+                <h3>Defense</h3>
+                <h4>{{ pokemon.stats[2].base_stat }}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="pokemon">
           <div class="pokemon-img">
             <div class="poke-img">
               <img src="@/assets/pokemon-1.png" alt="pokemon" />
@@ -349,28 +393,36 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
 </template>
 <script>
-// import axios from "axios";
+import axios from "axios";
 
 export default {
   name: "PokeDex",
   data() {
-    return {};
+    return {
+      initialList: 8,
+      pokemonList: [],
+    };
   },
   methods: {
-    // axiosGet() {
-    //   axios
-    //     .get("https://pokeapi.co/api/v2/pokemon/ditto")
-    //     .then((res) => console.log(res.data.height));
-    // },
+    getPokemon() {
+      for (let i = 1; i <= this.initialList; i++) {
+        this.getInitialList(i);
+      }
+    },
+    getInitialList(i) {
+      const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+      axios.get(url).then((res) => this.pokemonList.push(res.data));
+    },
   },
   mounted() {
-    // this.axiosGet();
+    this.getPokemon();
+    console.log(this.pokemonList);
   },
 };
 </script>
@@ -466,6 +518,19 @@ export default {
             .pokemon-name {
               color: $white-text;
               font-size: clamp(1.3rem, 2vw, 1.9rem);
+            }
+            .pokemon-types {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 0.4em;
+              margin: 0.5em;
+
+              li {
+                padding: 0.3rem;
+                background-color: #333;
+                border-radius: 4px;
+              }
             }
           }
         }
