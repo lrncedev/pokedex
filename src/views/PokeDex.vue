@@ -82,280 +82,8 @@
             </div>
           </div>
         </div>
+
         <!-- <div class="pokemon">
-          <div class="pokemon-img">
-            <div class="poke-img">
-              <img src="@/assets/pokemon-1.png" alt="pokemon" />
-            </div>
-            <div class="pokemon-info">
-              <h2 class="pokemon-name">Pokemon Name</h2>
-              <ul class="pokemon-types">
-                <li>Electric</li>
-              </ul>
-            </div>
-          </div>
-          <div class="pokemon-stats">
-            <div class="physical-stats">
-              <div class="height">
-                <h3>Height</h3>
-                <h4>4 feet</h4>
-              </div>
-              <div class="weight">
-                <h3>Weight</h3>
-                <h4>4 feet</h4>
-              </div>
-            </div>
-            <div class="game-stats">
-              <div class="hp">
-                <h3>HP</h3>
-                <h4>35</h4>
-              </div>
-              <div class="attack">
-                <h3>Attack</h3>
-                <h4>Attack</h4>
-              </div>
-              <div class="defense">
-                <h3>Defense</h3>
-                <h4>40</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="pokemon">
-          <div class="pokemon-img">
-            <div class="poke-img">
-              <img src="@/assets/pokemon-1.png" alt="pokemon" />
-            </div>
-            <div class="pokemon-info">
-              <h2 class="pokemon-name">Pokemon Name</h2>
-              <ul class="pokemon-types">
-                <li>Electric</li>
-              </ul>
-            </div>
-          </div>
-          <div class="pokemon-stats">
-            <div class="physical-stats">
-              <div class="height">
-                <h3>Height</h3>
-                <h4>4 feet</h4>
-              </div>
-              <div class="weight">
-                <h3>Weight</h3>
-                <h4>4 feet</h4>
-              </div>
-            </div>
-            <div class="game-stats">
-              <div class="hp">
-                <h3>HP</h3>
-                <h4>35</h4>
-              </div>
-              <div class="attack">
-                <h3>Attack</h3>
-                <h4>Attack</h4>
-              </div>
-              <div class="defense">
-                <h3>Defense</h3>
-                <h4>40</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="pokemon">
-          <div class="pokemon-img">
-            <div class="poke-img">
-              <img src="@/assets/pokemon-1.png" alt="pokemon" />
-            </div>
-            <div class="pokemon-info">
-              <h2 class="pokemon-name">Pokemon Name</h2>
-              <ul class="pokemon-types">
-                <li>Electric</li>
-              </ul>
-            </div>
-          </div>
-          <div class="pokemon-stats">
-            <div class="physical-stats">
-              <div class="height">
-                <h3>Height</h3>
-                <h4>4 feet</h4>
-              </div>
-              <div class="weight">
-                <h3>Weight</h3>
-                <h4>4 feet</h4>
-              </div>
-            </div>
-            <div class="game-stats">
-              <div class="hp">
-                <h3>HP</h3>
-                <h4>35</h4>
-              </div>
-              <div class="attack">
-                <h3>Attack</h3>
-                <h4>Attack</h4>
-              </div>
-              <div class="defense">
-                <h3>Defense</h3>
-                <h4>40</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="pokemon">
-          <div class="pokemon-img">
-            <div class="poke-img">
-              <img src="@/assets/pokemon-1.png" alt="pokemon" />
-            </div>
-            <div class="pokemon-info">
-              <h2 class="pokemon-name">Pokemon Name</h2>
-              <ul class="pokemon-types">
-                <li>Electric</li>
-              </ul>
-            </div>
-          </div>
-          <div class="pokemon-stats">
-            <div class="physical-stats">
-              <div class="height">
-                <h3>Height</h3>
-                <h4>4 feet</h4>
-              </div>
-              <div class="weight">
-                <h3>Weight</h3>
-                <h4>4 feet</h4>
-              </div>
-            </div>
-            <div class="game-stats">
-              <div class="hp">
-                <h3>HP</h3>
-                <h4>35</h4>
-              </div>
-              <div class="attack">
-                <h3>Attack</h3>
-                <h4>Attack</h4>
-              </div>
-              <div class="defense">
-                <h3>Defense</h3>
-                <h4>40</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="pokemon">
-          <div class="pokemon-img">
-            <div class="poke-img">
-              <img src="@/assets/pokemon-1.png" alt="pokemon" />
-            </div>
-            <div class="pokemon-info">
-              <h2 class="pokemon-name">Pokemon Name</h2>
-              <ul class="pokemon-types">
-                <li>Electric</li>
-              </ul>
-            </div>
-          </div>
-          <div class="pokemon-stats">
-            <div class="physical-stats">
-              <div class="height">
-                <h3>Height</h3>
-                <h4>4 feet</h4>
-              </div>
-              <div class="weight">
-                <h3>Weight</h3>
-                <h4>4 feet</h4>
-              </div>
-            </div>
-            <div class="game-stats">
-              <div class="hp">
-                <h3>HP</h3>
-                <h4>35</h4>
-              </div>
-              <div class="attack">
-                <h3>Attack</h3>
-                <h4>Attack</h4>
-              </div>
-              <div class="defense">
-                <h3>Defense</h3>
-                <h4>40</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="pokemon">
-          <div class="pokemon-img">
-            <div class="poke-img">
-              <img src="@/assets/pokemon-1.png" alt="pokemon" />
-            </div>
-            <div class="pokemon-info">
-              <h2 class="pokemon-name">Pokemon Name</h2>
-              <ul class="pokemon-types">
-                <li>Electric</li>
-              </ul>
-            </div>
-          </div>
-          <div class="pokemon-stats">
-            <div class="physical-stats">
-              <div class="height">
-                <h3>Height</h3>
-                <h4>4 feet</h4>
-              </div>
-              <div class="weight">
-                <h3>Weight</h3>
-                <h4>4 feet</h4>
-              </div>
-            </div>
-            <div class="game-stats">
-              <div class="hp">
-                <h3>HP</h3>
-                <h4>35</h4>
-              </div>
-              <div class="attack">
-                <h3>Attack</h3>
-                <h4>Attack</h4>
-              </div>
-              <div class="defense">
-                <h3>Defense</h3>
-                <h4>40</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="pokemon">
-          <div class="pokemon-img">
-            <div class="poke-img">
-              <img src="@/assets/pokemon-1.png" alt="pokemon" />
-            </div>
-            <div class="pokemon-info">
-              <h2 class="pokemon-name">Pokemon Name</h2>
-              <ul class="pokemon-types">
-                <li>Electric</li>
-              </ul>
-            </div>
-          </div>
-          <div class="pokemon-stats">
-            <div class="physical-stats">
-              <div class="height">
-                <h3>Height</h3>
-                <h4>4 feet</h4>
-              </div>
-              <div class="weight">
-                <h3>Weight</h3>
-                <h4>4 feet</h4>
-              </div>
-            </div>
-            <div class="game-stats">
-              <div class="hp">
-                <h3>HP</h3>
-                <h4>35</h4>
-              </div>
-              <div class="attack">
-                <h3>Attack</h3>
-                <h4>Attack</h4>
-              </div>
-              <div class="defense">
-                <h3>Defense</h3>
-                <h4>40</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="pokemon">
           <div class="pokemon-img">
             <div class="poke-img">
               <img src="@/assets/pokemon-1.png" alt="pokemon" />
@@ -395,6 +123,14 @@
           </div>
         </div> -->
       </div>
+      <div class="paginate">
+        <!-- <button @click="prev" :disabled="current == 1">Prev</button>
+          Page {{ current }} of {{ getPageLength }}
+          <button @click="next" :disabled="current == getPageLength">Next</button> -->
+        <button>Prev</button>
+        Page 1 of 100
+        <button>Next</button>
+      </div>
     </div>
   </div>
 </template>
@@ -415,14 +151,31 @@ export default {
         this.getInitialList(i);
       }
     },
-    getInitialList(i) {
-      const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+    // getInitialList(i) {
+    //   const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+    //   axios.get(url).then((res) => this.pokemonList.push(res.data));
+    // },
+    getByUrl(url) {
       axios.get(url).then((res) => this.pokemonList.push(res.data));
+    },
+    fetchPokemon() {
+      const url = "https://pokeapi.co/api/v2/pokemon/";
+      axios.get(url).then((res) => {
+        // console.log(res.data);
+        const arrayStart = res.data.results;
+
+        arrayStart.forEach((arr) => {
+          console.log(arr.url);
+          const pokemonUrl = arr.url;
+          this.getByUrl(pokemonUrl);
+        });
+      });
     },
   },
   mounted() {
-    this.getPokemon();
-    console.log(this.pokemonList);
+    // this.getPokemon();
+    // console.log(this.pokemonList);
+    this.fetchPokemon();
   },
 };
 </script>
@@ -472,7 +225,7 @@ export default {
   .grid-2 {
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
+    // gap: 1em;
 
     .grid-header {
       display: flex;
@@ -560,6 +313,20 @@ export default {
         }
       }
     }
+    .paginate {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5em;
+
+      button {
+        border: none;
+        padding: 0.4em 0.5em;
+        border-radius: 4px;
+        font-weight: 900;
+      }
+    }
   }
 }
 
@@ -590,7 +357,6 @@ export default {
   .grid {
     display: grid;
     grid-template-columns: 20% 80%;
-    // grid-auto-rows: calc(100vh - (80px + 32px));
 
     .grid-item {
       padding: 0;
@@ -606,78 +372,10 @@ export default {
     }
     .grid-2 {
       .grid-results {
-        // grid-auto-rows: 200px;
         grid-template-columns: repeat(4, 1fr);
         gap: 0.5em 1em;
       }
     }
   }
 }
-// @media screen and (min-width: 600px) and (max-width: 800px) {
-//   .grid {
-//     .grid-2 {
-//       .grid-results {
-//         // grid-auto-rows: 200px;
-//         // grid-template-columns: repeat(3, 1fr);
-//         gap: 0.5em 1em;
-//       }
-//     }
-//   }
-// }
-
-// @media screen and (min-width: 50em) {
-//   .grid {
-//     display: grid;
-//     grid-template-columns: 20% 80%;
-//     grid-auto-rows: calc(100vh - (80px + 32px));
-
-//     .grid-item {
-//       padding: $md;
-//     }
-
-//     .grid-1 {
-//       display: flex;
-//       padding: $md;
-//       flex-direction: column;
-//       gap: 1em;
-//       width: 100%;
-
-//       div {
-//         padding: $md;
-//         background-color: $accent-bg;
-//       }
-
-//       .filter-content {
-//         h3 {
-//           text-align: center;
-//           color: $gray-text;
-//           font-weight: 400;
-//         }
-//         hr {
-//           border: 1px solid $gray-text;
-//           margin: 0.4em 0;
-//         }
-//         .filter-type {
-//           display: flex;
-//           justify-content: space-between;
-//         }
-//       }
-
-//       .search-content {
-//         // display: flex;
-
-//         input[type="text"] {
-//           flex-grow: 1;
-//         }
-//       }
-//     }
-//     .grid-2 {
-//       .grid-results {
-//         grid-auto-rows: 200px;
-//         grid-template-columns: repeat(3, 1fr);
-//         gap: 0.5em 1em;
-//       }
-//     }
-//   }
-// }
 </style>
