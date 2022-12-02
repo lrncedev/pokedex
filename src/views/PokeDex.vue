@@ -38,7 +38,7 @@
         <h3>Result: <span>8</span> of <span>100</span></h3>
       </div>
       <div class="grid-results">
-        <div class="pokemon" v-for="pokemon in pokemonList" :key="pokemon.id">
+        <div class="pokemon" v-for="pokemon in pagination" :key="pokemon.id">
           <div class="pokemon-img">
             <div class="poke-img">
               <img :src="pokemon.sprites.front_default" :alt="pokemon.name" />
@@ -82,54 +82,14 @@
             </div>
           </div>
         </div>
-
-        <!-- <div class="pokemon">
-          <div class="pokemon-img">
-            <div class="poke-img">
-              <img src="@/assets/pokemon-1.png" alt="pokemon" />
-            </div>
-            <div class="pokemon-info">
-              <h2 class="pokemon-name">Pokemon Name</h2>
-              <ul class="pokemon-types">
-                <li>Electric</li>
-              </ul>
-            </div>
-          </div>
-          <div class="pokemon-stats">
-            <div class="physical-stats">
-              <div class="height">
-                <h3>Height</h3>
-                <h4>4 feet</h4>
-              </div>
-              <div class="weight">
-                <h3>Weight</h3>
-                <h4>4 feet</h4>
-              </div>
-            </div>
-            <div class="game-stats">
-              <div class="hp">
-                <h3>HP</h3>
-                <h4>35</h4>
-              </div>
-              <div class="attack">
-                <h3>Attack</h3>
-                <h4>Attack</h4>
-              </div>
-              <div class="defense">
-                <h3>Defense</h3>
-                <h4>40</h4>
-              </div>
-            </div>
-          </div>
-        </div> -->
       </div>
       <div class="paginate">
         <!-- <button @click="prev" :disabled="current == 1">Prev</button>
           Page {{ current }} of {{ getPageLength }}
           <button @click="next" :disabled="current == getPageLength">Next</button> -->
-        <button>Prev</button>
-        Page 1 of 100
-        <button>Next</button>
+        <button @click="prev">Prev</button>
+        Page {{ current }} of {{ getPageLength }}
+        <button @click="next">Next</button>
       </div>
     </div>
   </div>
@@ -141,40 +101,48 @@ export default {
   name: "PokeDex",
   data() {
     return {
-      initialList: 8,
       pokemonList: [],
+      current: 1,
+      pageSize: 8,
     };
   },
   methods: {
-    getPokemon() {
-      for (let i = 1; i <= this.initialList; i++) {
-        this.getInitialList(i);
-      }
+    prev() {
+      this.current--;
     },
-    // getInitialList(i) {
-    //   const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-    //   axios.get(url).then((res) => this.pokemonList.push(res.data));
-    // },
-    getByUrl(url) {
-      axios.get(url).then((res) => this.pokemonList.push(res.data));
+    next() {
+      this.current++;
+    },
+    async getByUrl(url) {
+      await axios.get(url).then((res) => this.pokemonList.push(res.data));
     },
     fetchPokemon() {
       const url = "https://pokeapi.co/api/v2/pokemon/";
       axios.get(url).then((res) => {
-        // console.log(res.data);
         const arrayStart = res.data.results;
 
         arrayStart.forEach((arr) => {
-          console.log(arr.url);
           const pokemonUrl = arr.url;
           this.getByUrl(pokemonUrl);
         });
       });
     },
   },
+  computed: {
+    indexStart() {
+      return (this.current - 1) * this.pageSize;
+    },
+    indexEnd() {
+      return this.indexStart + this.pageSize;
+    },
+    pagination() {
+      return this.pokemonList.slice(this.indexStart, this.indexEnd);
+    },
+    getPageLength() {
+      return Math.ceil(this.pokemonList.length / this.pageSize);
+    },
+  },
   mounted() {
-    // this.getPokemon();
-    // console.log(this.pokemonList);
     this.fetchPokemon();
   },
 };
@@ -185,6 +153,7 @@ export default {
   display: grid;
   min-height: 100%;
   grid-template-columns: 1fr;
+  align-items: start;
 
   .grid-item {
     padding: $md;
@@ -212,9 +181,9 @@ export default {
       }
     }
     .search-content {
+      padding: 0;
+      width: 100%;
       display: flex;
-      justify-content: flex-end;
-      margin-top: auto;
 
       input[type="text"] {
         flex-grow: 1;
@@ -231,7 +200,7 @@ export default {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      display: none;
+      // display: none;
     }
     .grid-results {
       padding: 1em 1em;
@@ -362,6 +331,9 @@ export default {
       padding: 0;
     }
     .grid-1 {
+      align-self: start;
+      position: sticky;
+      top: 0;
       .filter-content {
         padding: 0;
 
