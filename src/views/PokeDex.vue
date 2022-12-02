@@ -35,7 +35,10 @@
     <div class="grid-item grid-2">
       <div class="grid-header">
         <h2>Pokemon</h2>
-        <h3>Result: <span>8</span> of <span>100</span></h3>
+        <h3>
+          Result: <span>{{ pageSize }}</span> of
+          <span>{{ pokemonList.length }}</span>
+        </h3>
       </div>
       <div class="grid-results">
         <div class="pokemon" v-for="pokemon in pagination" :key="pokemon.id">
@@ -87,9 +90,9 @@
         <!-- <button @click="prev" :disabled="current == 1">Prev</button>
           Page {{ current }} of {{ getPageLength }}
           <button @click="next" :disabled="current == getPageLength">Next</button> -->
-        <button @click="prev">Prev</button>
+        <button @click="prev" :disabled="current == 1">Prev</button>
         Page {{ current }} of {{ getPageLength }}
-        <button @click="next">Next</button>
+        <button @click="next" :disabled="current == getPageLength">Next</button>
       </div>
     </div>
   </div>
@@ -117,7 +120,8 @@ export default {
       await axios.get(url).then((res) => this.pokemonList.push(res.data));
     },
     fetchPokemon() {
-      const url = "https://pokeapi.co/api/v2/pokemon/";
+      // const url = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
+      const url = "https://pokeapi.co/api/v2/pokemon";
       axios.get(url).then((res) => {
         const arrayStart = res.data.results;
 
@@ -200,7 +204,7 @@ export default {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      // display: none;
+      display: none;
     }
     .grid-results {
       padding: 1em 1em;
