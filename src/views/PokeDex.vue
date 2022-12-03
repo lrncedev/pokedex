@@ -1,7 +1,7 @@
 <template >
   <div class="grid">
     <div class="grid-item grid-1">
-      <div class="filter-content">
+      <!-- <div class="filter-content">
         <h3>Filter by:</h3>
         <hr />
         <div class="filter-type">
@@ -26,10 +26,10 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
       <div class="search-content">
-        <input type="text" name="" id="" />
-        <button>Search</button>
+        <input type="text" name="" id="" v-model="searchText" />
+        <button class="btn" @click="search">Search</button>
       </div>
     </div>
     <div class="grid-item grid-2">
@@ -107,6 +107,7 @@ export default {
       pokemonList: [],
       current: 1,
       pageSize: 8,
+      searchText: "",
     };
   },
   methods: {
@@ -119,16 +120,25 @@ export default {
     async getByUrl(url) {
       await axios.get(url).then((res) => this.pokemonList.push(res.data));
     },
-    fetchPokemon() {
+    async fetchPokemon() {
       // const url = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
       const url = "https://pokeapi.co/api/v2/pokemon";
-      axios.get(url).then((res) => {
+      await axios.get(url).then((res) => {
         const arrayStart = res.data.results;
 
         arrayStart.forEach((arr) => {
           const pokemonUrl = arr.url;
           this.getByUrl(pokemonUrl);
         });
+      });
+    },
+    search() {
+      let lowerCaseText = this.searchText.toLowerCase();
+      const url = `https://pokeapi.co/api/v2/pokemon/${lowerCaseText}`;
+
+      axios.get(url).then((res) => {
+        this.pokemonList = [];
+        this.pokemonList.push(res.data);
       });
     },
   },
@@ -191,6 +201,14 @@ export default {
 
       input[type="text"] {
         flex-grow: 1;
+        border: none;
+      }
+      .btn {
+        color: $white-text;
+        border: none;
+        padding: 0.3em 0.5em;
+        background-color: transparent;
+        border-radius: 0;
       }
     }
   }
