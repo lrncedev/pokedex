@@ -19,11 +19,11 @@ export default {
   padding: $md;
   align-items: center;
   display: flex;
+  justify-content: space-between;
   color: $gray-text;
 
   .app-title {
     color: $accent-text;
-    flex-grow: 1;
     cursor: pointer;
     font-size: clamp(2.3rem, 4.5vw, 2.8rem);
   }
