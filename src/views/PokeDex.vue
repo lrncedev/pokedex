@@ -28,8 +28,10 @@
         </div>
       </div> -->
       <div class="search-content">
-        <input type="text" name="" id="" v-model="searchText" />
-        <button class="btn" @click="search">Search</button>
+        <form @submit.prevent="search">
+          <input type="text" name="" id="" v-model="searchText" required />
+          <button type="submit" class="btn">Search</button>
+        </form>
       </div>
     </div>
     <div class="grid-item grid-2">
@@ -41,7 +43,12 @@
         </h3>
       </div>
       <div class="grid-results">
-        <div class="pokemon" v-for="pokemon in pagination" :key="pokemon.id">
+        <div
+          class="pokemon"
+          v-for="pokemon in pagination"
+          :key="pokemon.id"
+          @click="passPokemon(pokemon)"
+        >
           <div class="pokemon-img">
             <div class="poke-img">
               <img :src="pokemon.sprites.front_default" :alt="pokemon.name" />
@@ -87,27 +94,32 @@
         </div>
       </div>
       <div class="paginate">
-        <!-- <button @click="prev" :disabled="current == 1">Prev</button>
-          Page {{ current }} of {{ getPageLength }}
-          <button @click="next" :disabled="current == getPageLength">Next</button> -->
         <button @click="prev" :disabled="current == 1">Prev</button>
         Page {{ current }} of {{ getPageLength }}
         <button @click="next" :disabled="current == getPageLength">Next</button>
+      </div>
+    </div>
+    <div class="modal" v-if="modalShown" @click.self="modalAction">
+      <div class="modal-header">
+        <h2>{{ pokemonInfo.id }}</h2>
+        <button>✖</button>
       </div>
     </div>
   </div>
 </template>
 <script>
 import axios from "axios";
-
 export default {
   name: "PokeDex",
+  components: {},
   data() {
     return {
       pokemonList: [],
       current: 1,
       pageSize: 8,
       searchText: "",
+      pokemonInfo: "",
+      modalShown: false,
     };
   },
   methods: {
@@ -137,9 +149,20 @@ export default {
       const url = `https://pokeapi.co/api/v2/pokemon/${lowerCaseText}`;
 
       axios.get(url).then((res) => {
+        console.log(res.data);
         this.pokemonList = [];
         this.pokemonList.push(res.data);
       });
+      this.searchText = "";
+    },
+    modalAction() {
+      this.modalShown = !this.modalShown;
+    },
+    passPokemon(pokemon) {
+      this.modalAction();
+      console.log(pokemon);
+      this.pokemonInfo = pokemon;
+      console.log("pokemon info", this.pokemonInfo);
     },
   },
   computed: {
@@ -197,18 +220,21 @@ export default {
     .search-content {
       padding: 0;
       width: 100%;
-      display: flex;
 
-      input[type="text"] {
-        flex-grow: 1;
-        border: none;
-      }
-      .btn {
-        color: $white-text;
-        border: none;
-        padding: 0.3em 0.5em;
-        background-color: transparent;
-        border-radius: 0;
+      form {
+        display: flex;
+
+        input[type="text"] {
+          flex-grow: 1;
+          border: none;
+        }
+        .btn {
+          color: $white-text;
+          border: none;
+          padding: 0.3em 0.5em;
+          background-color: transparent;
+          border-radius: 0;
+        }
       }
     }
   }
@@ -225,12 +251,13 @@ export default {
       display: none;
     }
     .grid-results {
+      min-height: 100vh;
       padding: 1em 1em;
       display: grid;
       row-gap: 0.5em;
       column-gap: 1em;
       grid-template-columns: 1fr 1fr;
-      grid-auto-rows: auto;
+      grid-auto-rows: min-content;
 
       .pokemon {
         grid-template-columns: 1fr;
@@ -307,6 +334,7 @@ export default {
     .paginate {
       text-align: center;
       display: flex;
+      margin-top: auto;
       align-items: center;
       justify-content: center;
       gap: 0.5em;
@@ -316,6 +344,31 @@ export default {
         padding: 0.4em 0.5em;
         border-radius: 4px;
         font-weight: 900;
+      }
+    }
+  }
+  .modal {
+    height: calc(100vh - 8vh);
+    width: calc(100vw - 3em);
+    background-color: $main-bg;
+    color: $white-text;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      button {
+        padding: 0.5em;
+        background-color: transparent;
+        border: none;
+        color: $white-text;
+        font-size: 120%;
       }
     }
   }
