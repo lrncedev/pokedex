@@ -6,24 +6,23 @@ import PokeDex from "@/views/PokeDex.vue";
 const routes = [
   {
     path: "/",
+    redirect: { name: "HeroView" }, //Redirects to the name key and its value
+  },
+  {
+    path: "/",
+    name: "HeroView",
     component: HeroView,
   },
   {
     path: "/pokedex",
+    redirect: { name: "PokeDex" },
+    // component: PokeDex,
+  },
+  {
+    path: "/pokedex",
+    name: "PokeDex",
     component: PokeDex,
   },
-  // {
-  //   path: "/projects",
-  //   component: Project,
-  // },
-  // {
-  //   path: "/achievements",
-  //   component: Achievements,
-  // },
-  // {
-  //   path: "/contact",
-  //   component: Contact,
-  // },
 ];
 
 const router = createRouter({
