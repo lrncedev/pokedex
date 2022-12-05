@@ -104,6 +104,13 @@
         <h2>{{ pokemonInfo.id }}</h2>
         <button>✖</button>
       </div>
+      <div class="modal-info">
+        <div class="sprites">
+          <img :src="pokemonInfo.sprites.front_default" alt="" class="sprite" />
+          <img :src="pokemonInfo.sprites.back_default" alt="" class="sprite" />
+        </div>
+        <div>2</div>
+      </div>
     </div>
   </div>
 </template>
@@ -348,14 +355,18 @@ export default {
     }
   }
   .modal {
-    height: calc(100vh - 8vh);
-    width: calc(100vw - 3em);
+    height: 80%;
+    width: 80%;
     background-color: $main-bg;
+    border-radius: 5px;
     color: $white-text;
+    z-index: 100;
     position: absolute;
     top: 10%;
     left: 50%;
     right: 50%;
+    display: grid;
+    grid-auto-rows: 10% 90%;
     transform: translateX(-50%);
 
     .modal-header {
@@ -369,6 +380,35 @@ export default {
         border: none;
         color: $white-text;
         font-size: 120%;
+      }
+    }
+
+    .modal-info {
+      height: 100%;
+      background-color: #eee;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: auto;
+
+      .sprites {
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+
+        img {
+          width: 100%;
+        }
+
+        // flex-direction: column;
+
+        // .sprite {
+        //   width: 30%;
+        //   width: 50%;
+        // }
+        // :nth-child(even) {
+        //   margin-left: auto;
+
+        // }
       }
     }
   }
