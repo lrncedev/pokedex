@@ -19,7 +19,7 @@
     </div>
     <img src="@/assets/pokeart.png" alt="" />
 
-    <button class="cta">Let's Go</button>
+    <button class="cta" @click="gotoPokeDex">Let's Go</button>
   </div>
 </template>
 <script>
