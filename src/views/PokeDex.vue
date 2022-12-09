@@ -35,7 +35,7 @@
       </div>
     </div>
     <div class="grid-item grid-2">
-      <LoaderComponent v-if="hasLoaded" />
+      <LoaderComponent v-if="isLoading" />
       <div class="grid-header">
         <h2>Pokemon</h2>
         <h3>
@@ -100,10 +100,10 @@
         <button @click="next" :disabled="current == getPageLength">Next</button>
       </div>
     </div>
-    <div class="modal" v-if="modalShown" @click.self="modalAction">
+    <div class="modal" v-if="modalShown">
       <div class="modal-header">
         <h2>{{ pokemonInfo.id }}</h2>
-        <button>✖</button>
+        <button @click.self="modalAction">✖</button>
       </div>
       <div class="modal-info">
         <div class="sprites">
@@ -131,7 +131,7 @@ export default {
       searchText: "",
       pokemonInfo: "",
       modalShown: false,
-      hasLoaded: true,
+      isLoading: true,
     };
   },
   methods: {
@@ -145,8 +145,8 @@ export default {
       await axios.get(url).then((res) => this.pokemonList.push(res.data));
     },
     async fetchPokemon() {
-      const url = "https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0";
-      // const url = "https://pokeapi.co/api/v2/pokemon";
+      // const url = "https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0";
+      const url = "https://pokeapi.co/api/v2/pokemon";
 
       await axios.get(url).then((res) => {
         const arrayStart = res.data.results;
@@ -156,17 +156,20 @@ export default {
           this.getByUrl(pokemonUrl);
         });
       });
-      // this.hasLoaded = false;
+      // this.isLoading = false;
     },
-    search() {
+    async search() {
+      this.isLoading = true;
+      this.pokemonList = [];
       let lowerCaseText = this.searchText.toLowerCase();
       const url = `https://pokeapi.co/api/v2/pokemon/${lowerCaseText}`;
 
-      axios.get(url).then((res) => {
+      await axios.get(url).then((res) => {
         console.log(res.data);
         this.pokemonList = [];
         this.pokemonList.push(res.data);
       });
+      this.isLoading = false;
       this.searchText = "";
     },
     modalAction() {
@@ -195,7 +198,7 @@ export default {
   },
   async mounted() {
     await this.fetchPokemon();
-    this.hasLoaded = false;
+    this.isLoading = false;
   },
 };
 </script>
