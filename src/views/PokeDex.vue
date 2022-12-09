@@ -35,6 +35,7 @@
       </div>
     </div>
     <div class="grid-item grid-2">
+      <LoaderComponent v-if="hasLoaded" />
       <div class="grid-header">
         <h2>Pokemon</h2>
         <h3>
@@ -115,10 +116,13 @@
   </div>
 </template>
 <script>
+import LoaderComponent from "./LoaderComponent.vue";
 import axios from "axios";
 export default {
   name: "PokeDex",
-  components: {},
+  components: {
+    LoaderComponent,
+  },
   data() {
     return {
       pokemonList: [],
@@ -127,6 +131,7 @@ export default {
       searchText: "",
       pokemonInfo: "",
       modalShown: false,
+      hasLoaded: true,
     };
   },
   methods: {
@@ -140,8 +145,9 @@ export default {
       await axios.get(url).then((res) => this.pokemonList.push(res.data));
     },
     async fetchPokemon() {
-      // const url = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
-      const url = "https://pokeapi.co/api/v2/pokemon";
+      const url = "https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0";
+      // const url = "https://pokeapi.co/api/v2/pokemon";
+
       await axios.get(url).then((res) => {
         const arrayStart = res.data.results;
 
@@ -150,6 +156,7 @@ export default {
           this.getByUrl(pokemonUrl);
         });
       });
+      // this.hasLoaded = false;
     },
     search() {
       let lowerCaseText = this.searchText.toLowerCase();
@@ -186,8 +193,9 @@ export default {
       return Math.ceil(this.pokemonList.length / this.pageSize);
     },
   },
-  mounted() {
-    this.fetchPokemon();
+  async mounted() {
+    await this.fetchPokemon();
+    this.hasLoaded = false;
   },
 };
 </script>
@@ -247,6 +255,7 @@ export default {
   }
 
   .grid-2 {
+    position: relative;
     display: flex;
     flex-direction: column;
     // gap: 1em;
@@ -417,6 +426,7 @@ export default {
 @media screen and (max-width: 30em) {
   .grid {
     .grid-2 {
+      position: relative;
       .grid-results {
         width: 90%;
         margin: 0 auto;
