@@ -94,7 +94,7 @@
           </div>
         </div>
       </div>
-      <div class="paginate">
+      <div class="paginate" v-if="isDisabled">
         <button @click="prev" :disabled="current == 1">Prev</button>
         Page {{ current }} of {{ getPageLength }}
         <button @click="next" :disabled="current == getPageLength">Next</button>
@@ -139,6 +139,7 @@ export default {
       pokemonInfo: "",
       modalShown: false,
       isLoading: true,
+      isDisabled: false,
     };
   },
   methods: {
@@ -171,11 +172,17 @@ export default {
       let lowerCaseText = this.searchText.toLowerCase();
       const url = `https://pokeapi.co/api/v2/pokemon/${lowerCaseText}`;
 
-      await axios.get(url).then((res) => {
-        // console.log(res.data);
-        this.pokemonList = [];
-        this.pokemonList.push(res.data);
-      });
+      await axios
+        .get(url)
+        .then((res) => {
+          // console.log(res.data);
+          this.pokemonList = [];
+          this.pokemonList.push(res.data);
+        })
+        .catch(() => {
+          alert("Error: No such pokemon found");
+          this.$router.push("/");
+        });
       this.isLoading = false;
       this.searchText = "";
     },
