@@ -392,10 +392,14 @@ export default {
     border: 2px solid white;
     transform: translateX(-50%);
 
+    div {
+      border: 1px solid white;
+    }
     .modal-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 2px solid white;
 
       button {
         padding: 0.5em;
