@@ -94,7 +94,7 @@
           </div>
         </div>
       </div>
-      <div class="paginate" v-if="isDisabled">
+      <div class="paginate">
         <button @click="prev" :disabled="current == 1">Prev</button>
         Page {{ current }} of {{ getPageLength }}
         <button @click="next" :disabled="current == getPageLength">Next</button>
@@ -139,7 +139,7 @@ export default {
       pokemonInfo: "",
       modalShown: false,
       isLoading: true,
-      isDisabled: false,
+      // isDisabled: false,
     };
   },
   methods: {
@@ -181,9 +181,10 @@ export default {
         })
         .catch(() => {
           alert("Error: No such pokemon found");
+          this.isDisabled = true;
           this.$router.push("/");
         });
-      this.isLoading = false;
+      // this.isLoading = false;
       this.searchText = "";
     },
     modalAction() {
