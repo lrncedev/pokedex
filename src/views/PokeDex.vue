@@ -102,7 +102,7 @@
     </div>
     <div class="modal" v-if="modalShown">
       <div class="modal-header">
-        <h2>{{ pokemonInfo.id }}</h2>
+        <h2>{{ pokemonInfo.name.toUpperCase() }}</h2>
         <button @click.self="modalAction">✖</button>
       </div>
       <div class="modal-info">
@@ -110,7 +110,14 @@
           <img :src="pokemonInfo.sprites.front_default" alt="" class="sprite" />
           <img :src="pokemonInfo.sprites.back_default" alt="" class="sprite" />
         </div>
-        <div>2</div>
+        <div class="pokeInfo">
+          <h2>Moves</h2>
+          <ul class="move-list">
+            <li v-for="(move, index) in getAbilities" :key="index">
+              {{ move.move.name }}
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -165,7 +172,7 @@ export default {
       const url = `https://pokeapi.co/api/v2/pokemon/${lowerCaseText}`;
 
       await axios.get(url).then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         this.pokemonList = [];
         this.pokemonList.push(res.data);
       });
@@ -177,9 +184,9 @@ export default {
     },
     passPokemon(pokemon) {
       this.modalAction();
-      console.log(pokemon);
+      // console.log(pokemon);
       this.pokemonInfo = pokemon;
-      console.log("pokemon info", this.pokemonInfo);
+      // console.log("pokemon info", this.pokemonInfo);
     },
   },
   computed: {
@@ -194,6 +201,10 @@ export default {
     },
     getPageLength() {
       return Math.ceil(this.pokemonList.length / this.pageSize);
+    },
+    getAbilities() {
+      const pokemonMoves = this.pokemonInfo.moves.slice(0, 10);
+      return pokemonMoves;
     },
   },
   async mounted() {
@@ -367,7 +378,6 @@ export default {
     }
   }
   .modal {
-    height: 80%;
     width: 80%;
     background-color: $main-bg;
     border-radius: 5px;
@@ -379,6 +389,7 @@ export default {
     right: 50%;
     display: grid;
     grid-auto-rows: 10% 90%;
+    border: 2px solid white;
     transform: translateX(-50%);
 
     .modal-header {
@@ -393,34 +404,53 @@ export default {
         color: $white-text;
         font-size: 120%;
       }
+
+      h2 {
+        margin-left: 1em;
+      }
     }
 
     .modal-info {
       height: 100%;
-      background-color: #eee;
+      // background-color: #eee;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       grid-auto-rows: auto;
 
       .sprites {
         display: flex;
-        flex-direction: column;
+        // background-color: $accent-bg;
+        // flex-direction: column;
         padding: 1em;
 
         img {
           width: 100%;
         }
+      }
+      .pokeInfo {
+        // background-color: black;
+        padding: 0.5em 1em;
+        h2 {
+          text-align: center;
+          text-transform: uppercase;
+          font-size: clamp(2rem, 2vw, 2.5rem);
+          margin-bottom: 0.3em;
+        }
+        .move-list {
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1em;
 
-        // flex-direction: column;
-
-        // .sprite {
-        //   width: 30%;
-        //   width: 50%;
-        // }
-        // :nth-child(even) {
-        //   margin-left: auto;
-
-        // }
+          li {
+            padding: 0.3em;
+            background-color: $accent-bg;
+            color: $accent-text;
+            border-radius: 4px;
+            font-size: clamp(1.3rem, 2vw, 1.9rem);
+          }
+        }
       }
     }
   }
@@ -445,6 +475,11 @@ export default {
     .grid-2 {
       .grid-results {
         grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .modal {
+      .modal-info {
+        grid-template-columns: 1fr 1fr;
       }
     }
   }
