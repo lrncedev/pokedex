@@ -184,7 +184,7 @@ export default {
           this.isDisabled = true;
           this.$router.push("/");
         });
-      // this.isLoading = false;
+      this.isLoading = false;
       this.searchText = "";
     },
     modalAction() {
